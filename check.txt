@@ -1,0 +1,129 @@
+package com.example.checkbox;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.Toast;
+
+
+public class MainActivity extends AppCompatActivity {
+    CheckBox bl, ind, je, in;
+    String bel,indo,jerm,ingg;
+    Button pilihsemua, batalpilih;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        bl = (CheckBox) findViewById(R.id.belanda);
+        ind = (CheckBox) findViewById(R.id.indonesia);
+        je = (CheckBox) findViewById(R.id.jerman);
+        in = (CheckBox) findViewById(R.id.inggris);
+        pilihsemua = (Button) findViewById(R.id.semua);
+        batalpilih = (Button) findViewById(R.id.batal);
+
+
+        bl.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (bl.isChecked()) {
+                    bl.setText("Belanda Terpilih");
+                    bl.setChecked(false);
+                } else if (!bl.isChecked())
+                    bl.setText("Belanda Tidak Terpilih");
+                bl.setChecked(true);
+            }
+        });
+
+        in.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!in.isChecked()) {
+                    in.setText("Inggris Terpilih");
+                    in.setChecked(false);
+                } else if (!in.isChecked())
+                    in.setText("Belanda Tidak Terpilih");
+                in.setChecked(true);
+            }
+        });
+
+
+
+        pilihsemua.setOnClickListener(new OnClickListener() {
+            public void onClick(View view) {
+                if (bl.isChecked()) {
+                    bl.setText("Belanda Terpilih");
+                    bl.setChecked(true);
+                } else if (!bl.isChecked())
+                    bl.setText("Belanda Terpilih");
+                    bl.setChecked(true);
+
+                if (in.isChecked()) {
+                    in.setText("Inggris Terpilih");
+                    in.setChecked(true);
+                } else if (!in.isChecked())
+                    in.setText("Inggris Terpilih");
+                in.setChecked(true);
+
+                if (ind.isChecked()) {
+                    ind.setText("Indonesia Terpilih");
+                    ind.setChecked(true);
+                } else if (!ind.isChecked())
+                    ind.setText("Indonesia Terpilih");
+                    ind.setChecked(true);
+
+                if (je.isChecked()) {
+                    je.setText("Jerman Terpilih");
+                    je.setChecked(true);
+                } else if (!je.isChecked())
+                    je.setText("Jerman Terpilih");
+                    je.setChecked(true);
+            }
+
+        });
+
+
+
+        batalpilih.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (bl.isChecked()) {
+                    bl.setText("Belanda Tidak Terpilih");
+                    bl.setChecked(false);
+                } else if (bl.isChecked())
+                    bl.setText("Belanda Tidak Terpilih");
+                    bl.setChecked(false);
+
+                if (in.isChecked()) {
+                    in.setText("Inggris Tidak Terpilih");
+                    in.setChecked(false);
+                } else if (in.isChecked())
+                    in.setText("Inggris Tidak Terpilih");
+                    in.setChecked(false);
+
+                if (ind.isChecked()) {
+                    ind.setText("Indonesia Tidak Terpilih");
+                    ind.setChecked(false);
+                } else if (ind.isChecked())
+                    ind.setText("Indonesia Tidak Terpilih");
+                    ind.setChecked(false);
+
+                if (je.isChecked()) {
+                    je.setText("Jerman Tidak Terpilih");
+                    je.setChecked(false);
+                } else if (je.isChecked())
+                    je.setText("Jerman Tidak Terpilih");
+                    je.setChecked(false);
+
+            }
+        });
+
+
+
+        }
+    }
